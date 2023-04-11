@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>M1Ty07</title>
+        <link rel="stylesheet" href="style.css">   
+    </head>
+    <body>  
+        <div class = "text">
+            <div class = "header">
+                <h1>M1Ty07 GPT</h1>
+            </div>
+            <div class = "textbox">
+                <input id = "input" type = "text"><br>
+            </div>
+            <div >
+                <button class = "addButton" onclick="changeText('Please Wait...');question = document.querySelector('#input').value;call(question);setTimeout(function() {changeText(response2.choices[0].message.content);}, 7000);">Ask</button>
+            </div>
+             <div class = "paragraph">
+                <p id ="myPara"></p>
+             </div>      
+        </div>
+    <script>
+        var question;
+        var response2;
+        function changeText(j){
+            var element = document.getElementById("myPara");
+            element.innerHTML =  j;
+        }  
+        function call(x){
+            const options = {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                    'X-RapidAPI-Key': '822a6b83a9msh79691eff59af28dp1bfcaejsn4677001c4c3b',
+                    'X-RapidAPI-Host': 'openai80.p.rapidapi.com'
+                },
+                body: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"'+x+'"}]}'
+            };
+            fetch('https://openai80.p.rapidapi.com/chat/completions', options)
+                .then(response => response2 =response.json())
+                .then(response => response2=response)
+                .catch(err => console.error(err));
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+.text{
+                
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+.addButton{
+    margin-top: 25px;
+    background-color: rgb(98, 97, 97);
+    border: none;
+    font-size: 20px;
+    padding:10px ;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 7px;
+    font-family: Arial;
+    color: white;
+}
+.textbox{
+    margin-top: 60px;
+    
+}
+.addButton:hover{
+    background-color:rgb(77, 76, 76);
+}
+.paragraph{
+    font-family:Copperplate;
+}
+.header{
+    margin-top: 150px;
+    color: white;
+}
+body{
+    background-color: rgb(26, 26, 26);
+}
